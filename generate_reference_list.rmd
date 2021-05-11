@@ -12,15 +12,24 @@ The output will be given directly inside the notebook and also saved as a `txt` 
 
 # Setup
 
-Change the below values to appropriate values:
-```{r}
-input_file <-
-output_file_name <- '
+Change the values below according to your needs. The vanilla implementation assumes that **the manuscript with which we will work is located in the same folder as this script**.
+
+```{r set filenames}
+# can also be set to a word document if the conversion option below is used
+input_file_name <- 'manuscript.docx'
+output_file_name <- 'references.txt'
+```
+
+## Conversion
+
+If you are running a UNIX System (i.e., MacOS or Linux) and have `pandoc` installed, you can use the below code to let it convert your manuscript from `docx` to `txt`. Other options are copy-pasting the text into a document or saving as a `txt` file from within *Word*. 
+
+```{r optional conversion}
+# only run if a wordx document was specified above
+# careful: data might get lost otherwise!
+args <- paste(input_file_name, '-o', 'manuscript.txt')
+system2(command = 'pandoc', args = args)
 ```
 
 
-If you are running a UNIX System (i.e., MacOS or Linux) and have `pandoc` installed, you can use the below
-```{r}
-plot(cars)
-```
 
