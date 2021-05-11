@@ -1,0 +1,26 @@
+---
+title: "Generate List of Used References"
+output: html_notebook
+---
+
+# Description 
+
+This notebook contains code that generates a list of used references from within a manuscript. The manuscript has to be in `txt` format. 
+References need to be in the Form (Author, Year) or (Author A, Year; Author B Year). 
+The output will be a list of all references used. The outuput will be sorted alhabetically. Brackets that contain multiple references will be split up accordingly, i.e. the above example will generate two entries in the output. There will be no duplicates in the output.
+The output will be given directly inside the notebook and also saved as a `txt` file.
+
+# Setup
+
+Change the below values to appropriate values:
+```{r}
+input_file <-
+output_file_name <- '
+```
+
+
+If you are running a UNIX System (i.e., MacOS or Linux) and have `pandoc` installed, you can use the below
+```{r}
+plot(cars)
+```
+
