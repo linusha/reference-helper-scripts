@@ -1,6 +1,5 @@
 library('readtext')
 library('stringr')
-library('rlist')
 generate_reference_list <- function(input_name) {
   text <- readtext(input_name)
   # remove new lines and replace by space
