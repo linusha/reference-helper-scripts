@@ -6,7 +6,7 @@ output: html_notebook
 # Description 
 
 This notebook contains code that generates a list of used references from within a manuscript. The manuscript has to be in `txt` format. 
-References need to be in the Form (Author, Year) or (Author A, Year; Author B Year). 
+References need to be in the Form (Author Year) or (Author A Year; Author B Year) or (Author A Year, Author B Year). 
 The output will be a list of all references used. The outuput will be sorted alhabetically. Brackets that contain multiple references will be split up accordingly, i.e. the above example will generate two entries in the output. There will be no duplicates in the output.
 The output will be given directly inside the notebook and also saved as a `txt` file.
 
@@ -16,7 +16,7 @@ Change the values below according to your needs. The vanilla implementation assu
 
 ```{r set filenames}
 # can also be set to a word document if the conversion option below is used
-input_file_name <- 'manuscript.docx'
+input_file_name <- 'manuscript.txt'
 output_file_name <- 'references.txt'
 ```
 
@@ -31,5 +31,15 @@ args <- paste(input_file_name, '-o', 'manuscript.txt')
 system2(command = 'pandoc', args = args)
 ```
 
+# Reference parsing
+
+```{r}
+source('reference_list_generator_helper.R')
+reference_list <- generate_reference_list(input_file_name)
+fileConn <- file(output_file_name)    
+writeLines(reference_list, fileConn)    
+close(fileConn)
+reference_list
+```
 
 
