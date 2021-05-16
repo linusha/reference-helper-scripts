@@ -29,6 +29,7 @@ If you are running a UNIX System (i.e., MacOS or Linux) and have `pandoc` instal
 # careful: data might get lost otherwise!
 args <- paste(input_file_name, '-o', 'manuscript.txt')
 system2(command = 'pandoc', args = args)
+input_file_name <- 'manuscript.txt'ŝ
 ```
 
 # Reference parsing
