@@ -1,6 +1,6 @@
 # reference-helper-scripts
 
-A tiny, opinionated would-like-to-be collection of helper scripts to deal with references in scientific manuscripts (mainly in the social sciences).
+A tiny, opinionated helper script to deal with references in scientific manuscripts (mainly in the social sciences).
 
 ## Requirements
 
